@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-# Path to the directory containing the .bdf files
-directory_path="./"
-
+type bdfresize > /dev/null 2>&1 || {
+    echo 'error : install bdfresize first' >&2
+    exit 1
+}
 # Loop through all .bdf files in the directory
 for bdf_file in "$(pwd)"/*.bdf; do
   # Check if the file exists and is a regular file
