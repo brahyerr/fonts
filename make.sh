@@ -6,6 +6,6 @@ type fonttosfnt > /dev/null 2>&1 || {
     exit 1
 }
 
-for font in *.bdf; do
-    fonttosfnt -v -o "${font%.*}.otb" "$font"
+for font in *-scaled.bdf; do
+    fonttosfnt -v -o "${font%.*}-scaled.otb" "$font"
 done
