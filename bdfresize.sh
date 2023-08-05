@@ -8,8 +8,8 @@ type bdfresize > /dev/null 2>&1 || {
 for bdf_file in "$(pwd)"/*.bdf; do
   # Check if the file exists and is a regular file
   if [ -f "$bdf_file" ]; then
-    # Generate the new filename with the suffix -scaled.bdf
-    scaled_filename="${bdf_file%.bdf}-scaled.bdf"
+    # Generate the new filename with the suffix scaled.bdf
+    scaled_filename="${bdf_file%.bdf}scaled.bdf"
 
     # Use bdfscale to resize the font and save it with the new filename
     bdfresize "$bdf_file" -f 2 > "$scaled_filename"
